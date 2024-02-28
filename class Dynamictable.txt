@@ -1,0 +1,29 @@
+class Dynamictable:
+    
+    data = []
+
+    @classmethod
+    def insert_data(cls, *args):
+        cls.data.append(args)
+
+    @classmethod
+    def assert_data_in_table(cls, ui_table_data):
+        assert cls.data == ui_table_data, "Data in UI table does not match stored data"
+
+Dynamictable.insert_data("Bob", 20, "Male")
+Dynamictable.insert_data("george", 42, "Male")
+Dynamictable.insert_data("Sara", 42, "Female")
+Dynamictable.insert_data("Conor", 40, "Male")
+Dynamictable.insert_data("Jennifer", 42, "Female")
+
+
+
+ui_table_data = [
+    ["Bob", 20, "Male"],
+    ["george", 42, "Male"],
+    ["Sara", 42, "Female"],
+    ["Conor", 40, "Male"],
+    ["Jennifer", 42, "Female"],
+]
+
+DataTable.assert_data_in_table(ui_table_data)
